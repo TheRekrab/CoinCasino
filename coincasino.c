@@ -4,13 +4,13 @@
 #include <string.h>
 #include <time.h>
 #include "ascii_art.h"
-#include "bank.h"
+#include "bank_utils.h"
+#include "clear_buffer.h"
 
 #define BUFFSIZE 2048
 
 long flip();
 void rules();
-void clear_buffer();
 void loop(long *coins, char* username);
 long result_bet(long coins_to_bet, char* bet, char* correct);
 long place_bet(long coins);
@@ -55,12 +55,6 @@ void rules() {
   printf("You start the game with exactly 100 coins (if this is your first time). Let's get this round started!\n\n");
 }
 
-void clear_buffer() {
-  long c;
-  while ( (c = getchar()) != '\n' && c != EOF) {
-    ; // Do nothing...
-  }
-}
 
 // More complex functions:
 long solve_bet(long coins_to_bet, char* bet, char* correct) {

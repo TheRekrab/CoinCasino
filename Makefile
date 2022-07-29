@@ -1,2 +1,5 @@
-coinflip:coinflip.c
-	gcc coinflip.c -s -o coinflip
+coincasino:coincasino.c
+	gcc coincasino.c -s -o coincasino
+
+bank:bank.c
+	gcc bank.c -s -o bank

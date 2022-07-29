@@ -18,12 +18,7 @@ long get_balance(char* username) {
   char coins_str[BUFFSIZE];
   fgets(coins_str, BUFFSIZE, fp);
   fclose(fp);
-  if ( !(atol(coins_str)) ) {
-    puts("Error reading coin balance.");
-    exit(0);
-  } else {
-    return atol(coins_str);
-  }
+  return atol(coins_str);
 }
 
 void add_coins(char* username, long gain) {
