@@ -16,7 +16,8 @@ int result_bet(int coins_to_bet, char* bet, char* correct);
 int place_bet(int coins);
 
 int main() {
-  puts("Welcome to the Coin Casino.");
+  start_screen();
+  puts("\n\nWelcome to the Coin Casino.");
   printf("Would you like to play? (y/n):  ");
   char play = getchar();
   // printf("You typed: %c.\n", play);
