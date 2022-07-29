@@ -38,6 +38,7 @@ int main() {
 int flip() {
   return rand() % 2;
 }
+
 void rules() {
   puts("  COIN FLIP RULES:");
   puts(" 1. A coin is tossed.");
@@ -47,12 +48,14 @@ void rules() {
   puts(" 3. This continues until you decide to quit, or are out of money.");
   printf("You start the game with exactly %d coins. Let's get this round started!\n\n", START_MONEY);
 }
+
 void clear_buffer() {
   int c;
   while ( (c = getchar()) != '\n' && c != EOF) {
     ; // Do nothing...
   }
 }
+
 // More complex functions:
 int solve_bet(int coins_to_bet, char* bet, char* correct) {
   printf("The coin was %s!\n", correct);
@@ -65,6 +68,7 @@ int solve_bet(int coins_to_bet, char* bet, char* correct) {
     return 0 - coins_to_bet;
   }
 }
+
 int place_bet(int coins) {
   // Get amount of money to bet:
   printf("Betting time!\nHow many coins do you want to bet?  ");
@@ -74,6 +78,9 @@ int place_bet(int coins) {
   if ( !(atoi(coins_to_bet_str)) ) {
     puts("Not a number!");
     return 0;
+  } else if (atoi(coins_to_bet_str) < 0) { // Prevent user from entering random numbers.
+    printf("You cannot bet %d coins. Try again.\n", atoi(coins_to_bet_str));
+    return 0;
   }
   int coins_to_bet = atoi(coins_to_bet_str);
   // Check if it is OK to be removed from the account:
@@ -82,7 +89,7 @@ int place_bet(int coins) {
     return 0;
   }
   // Get bet (heads or tails):
-  printf("You have wagered %d coins.\nWhat do you think the outcome will be? (heads/tails):  ");
+  printf("You have wagered %d coins.\nWhat do you think the outcome will be? (heads/tails):  ", coins_to_bet);
   char bet[BUFFSIZE];
   fgets(bet, BUFFSIZE, stdin);
   bet[strcspn(bet, "\n")] = 0; // Replace \n with a null byte.
@@ -98,6 +105,7 @@ int place_bet(int coins) {
   }
 
 }
+
 void loop(int* coins) {
   int gain = place_bet(*coins);
   if (gain == 0) {
