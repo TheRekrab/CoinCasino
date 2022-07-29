@@ -1,0 +1,4 @@
+make: Entering directory '/home/rekrab/Documents/Scripts/C/gambling'
+gcc coinflip.c -s -o coinflip
+make: Leaving directory '/home/rekrab/Documents/Scripts/C/gambling'
+ 
