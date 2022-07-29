@@ -11,3 +11,4 @@ mkdir Accounts
 mv /tmp/accounts_while_updating/* Accounts/
 rmdir /tmp/accounts_while_updating/
 echo "Done!"
+echo "If you did not source this file, you may have to exit and then reenter this directory, otherwise it will look like all of the files are gone."
