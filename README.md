@@ -8,6 +8,21 @@ You can interact with the 'bank' via the `bank` application.
 To play the game, clone the repo from GitHub and then simply run the downloaded executable, `coincasino`.
 ```
 $ git clone https://github.com/TheRekrab/CoinCasino
+$ ./coincasino
+```
+
+## First Install Issue:
+I tried as hard as I could, but I could not fix this problem. If you are reading this and now how to solve it, then I would gladly appreciate a comment. Here's the issue & a makeshift solution:
+
+#### Issue:
+When using the program for the first time with no user accounts, there is no `Accounts` directory. When the program tries to open a file in that directory, it will crash with a dreaded `segmentation fault (core dumped)`.
+
+#### Solution (kind of):
+All you have to do to fix the problem is create a new directory called `Accounts`, like so:
+
+```
+$ mkdir Accounts
+$ ./coincasino
 ```
 
 ## How to play:
@@ -17,6 +32,8 @@ Once opening the game, you will be greeted with a cool ASCII art title.
 You can choose whether or not you want to play:
 
 ```
+$ ./coincasino
+
 [|=================================================================================|]
    //==\\  //==\\  ====  |\\ ||    //==\\  //-\\  //===   ====  |\\ ||  //==\\
    ||      ||  ||   ||   ||\\||    ||      ||=||  \\==\\   ||   ||\\||  ||  ||
@@ -48,7 +65,7 @@ You can leave at any point in the game, but you will be forcefully kicked out if
 
 If at any point in the game, you want to know how much money you have, or you want to reset your account, you can use the bank application. Launch it via:
 ```
-./bank
+$ ./bank
 ```
 You will have 2 options:
 
@@ -79,6 +96,9 @@ To update the game, just SOURCE the script. DO not run the script. Althouhg it w
 
 ```
 $ source ./update.sh
+Updating...
+Done!
+If you did not source this file, you may have to exit and then reenter this directory, otherwise it will look like all of the files are gone.
 ```
 
 That's all there is to my game. I hope you enjoy it!
