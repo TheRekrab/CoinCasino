@@ -1,12 +1,16 @@
 # Coin Casino
 This is a basic game that I created. You are given 100 coins and you try to push your luck as far as it will go without going out of money. I included some fun ASCII art titles for fun.
 
+You use a basic login system, so your coins will be kept from game to game.
+
+You can interact with the 'bank' via the `bank` application.
+
 To play the game, clone the repo from GitHub and then simply run the downloaded executable, `coincasino`.
 ```
 $ git clone https://github.com/TheRekrab/CoinCasino
 ```
 
-# How to play:
+## How to play:
 If you are using Windows, then you will have to recompile the source code (`coincasino.c`) to a windows-friendly executable.
 
 Once opening the game, you will be greeted with a cool ASCII art title.
@@ -40,7 +44,7 @@ You can leave at any point in the game, but you will be forcefully kicked out if
    \\==//  || ||  || \/ ||  ||==    \\==//    \/    ||==  || \\
 [|===============================================================|]
 ```
-# The Bank
+## The Bank
 
 If at any point in the game, you want to know how much money you have, or you want to reset your account, you can use the bank application. Launch it via:
 ```
@@ -68,7 +72,7 @@ ACCOUNT BALANCE:  100 coins.
 
 You may want to reset your account if you go broke and no longer have any coins.
 
-# Updating
+## Updating the software
 I have included a special shell script (`update.sh`) to be used for updating the game if I make more changes. It automates the process of deleting and re-cloning the GitHub repository, while still keeping your account files intact.
 
 To update the game, just SOURCE the script. DO not run the script. Althouhg it will work, you will have to exit and reenter the directory that the code is in, otherwise it will look as if there is nothing there.
