@@ -11,20 +11,6 @@ $ git clone https://github.com/TheRekrab/CoinCasino
 $ ./coincasino
 ```
 
-## First Install Issue:
-I tried as hard as I could, but I could not fix this problem. If you are reading this and now how to solve it, then I would gladly appreciate a comment. Here's the issue & a makeshift solution:
-
-#### Issue:
-When using the program for the first time with no user accounts, there is no `Accounts` directory. When the program tries to open a file in that directory, it will crash with a dreaded `segmentation fault (core dumped)`.
-
-#### Solution (kind of):
-All you have to do to fix the problem is create a new directory called `Accounts`, like so:
-
-```
-$ mkdir Accounts
-$ ./coincasino
-```
-
 ## How to play:
 If you are using Windows, then you will have to recompile the source code (`coincasino.c`) to a windows-friendly executable.
 
