@@ -75,16 +75,7 @@ ACCOUNT BALANCE:  100 coins.
 
 You may want to reset your account if you go broke and no longer have any coins.
 
-## Updating the software
-I have included a special shell script (`update.sh`) to be used for updating the game if I make more changes. It automates the process of deleting and re-cloning the GitHub repository, while still keeping your account files intact.
+---
 
-To update the game, just SOURCE the script. DO not run the script. Althouhg it will work, you will have to exit and reenter the directory that the code is in, otherwise it will look as if there is nothing there.
-
-```
-$ source ./update.sh
-Updating...
-Done!
-If you did not source this file, you may have to exit and then reenter this directory, otherwise it will look like all of the files are gone.
-```
 
 That's all there is to my game. I hope you enjoy it!
