@@ -1,9 +1,28 @@
-all:coincasino.c bank.c
-	gcc coincasino.c -s -o coincasino
-	gcc bank.c -s -o bank
+CC = gcc
+CFLAGS = -Wall -s -DNDEBUG
+DEBUGFLAGS = -Wall -g
+HEADERS = bank_utils.h colors.h ascii_art.h clear_buffer.h
+BANKNAME = bank
+APPNAME = coincasino
 
-coincasino:coincasino.c
-	gcc coincasino.c -s -o coincasino
+all: $(BANKNAME) $(APPNAME)
+debug: $(BANKNAME).debug $(APPNAME).debug
 
-bank:bank.c
-	gcc bank.c -s -o bank
+$(APPNAME): $(APPNAME).c $(HEADERS)
+	$(CC) $(CFLAGS) $< -o $@
+
+$(BANKNAME): $(BANKNAME).c $(HEADERS)
+	$(CC) $(CFLAGS) $< -o $@
+
+$(APPNAME).debug: $(APPNAME).c $(HEADERS)
+	$(CC) $(DEBUGFLAGS) $< -o $@
+
+$(BANKNAME).debug: $(BANKNAME).c $(HEADERS)
+	$(CC) $(DEBUGFLAGS) $< -o $@
+
+clean:
+	rm -f $(APPNAME) $(BANKNAME) a.out $(APPNAME).debug $(BANKNAME).debug
+
+run: $(APPNAME)
+	@./$(APPNAME)
+	@rm $(APPNAME)
