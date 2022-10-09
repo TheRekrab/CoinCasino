@@ -1,12 +1,26 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <dirent.h>
+#include <errno.h>
+#include <sys/stat.h>
 
 #define BUFFSIZE 2048
 
 long get_balance(char* username) {
   char file_path[BUFFSIZE] = "Accounts/";
   strncat(file_path, username, BUFFSIZE-1);
+	// lets quickly make sure that there is an accounts dir:
+	
+	DIR* ac = opendir("Accounts");
+	if (ac) {
+		// it exists
+		// do nothing
+		;
+	} else if (errno == ENOENT) {
+		mkdir("Accounts", 0777);
+	}
+
   FILE *fp = fopen(file_path, "r");
   if (fp == NULL) {
     // Add the starting 100 coins.
